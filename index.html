@@ -1,68 +1,348 @@
-<html>
-    <body>
-        <h1>Feiyi Fan | 范非易</h1>
-        <h2>Info</h2>
-        <ul>
-            <li>currently affliated with Institute of Computing Technology, Chinese Academy of Sciences</li>
-            <li>Senior Engineer</li>
-            <li>e-mail: fanfeiyi@ict.ac.cn</li>
-        </ul>
-        <h2>Education & Work Experience</h2>
-        <ul>
-            <li>
-                2018--2020: Research Fellow at National University of Singapore
-                <ul>
-                    <li>project management: PANDA -- AI as a service</li>
-                    <li>principal developer: GEMINI -- machine learning pipeline management with version control</li>
-                </ul>
-            </li>
-            <li>
-                2012--2018: Ph.D. conferred by University of Chinese Academy of Sciences
-                - Institute of Microelectronics, Chinese Academy of Sciences
-                <ul>
-                    <li>wearable devices</li>
-                    <li>biomedical signal processing</li>
-                    <li>embedded software / algorithm design</li>
-                </ul>
-                <ul>
-                    <li>motion-artifact resistant oximetry</li>
-                    <li>motion-artifact resistant wearable devices</li>
-                </ul>
-            </li>
-            <li>
-                2015--2016: M.S. conferred by University of California, Los Angeles
-                <ul>
-                    <li>text-independent speaker recognition in low-SNR environment</li>
-                    <li>2016 presidential election prediction</li>
-                </ul>
-            </li>
-            <li>
-                2008--2013: B.E. conferred by Beijing Institute of Technology
-                <ul>
-                    <li>RFID campus card management system</li>
-                    <li>Zigbee-based parking lot sensor network</li>
-                </ul>
-            </li>
-        </ul>
-        <h2>Awards</h2>
-        <ul>
-            <li>National Informatics Olympiad in Province -- First Prize</li>
-            <li>Institute of Microelectronics, Chinese Academy of Sciences -- Wang Shouwu Scholarship</li>
-        </ul>
-        <h2>Part-time</h2>
-        <ul>
-            <li>2013--2015: software engineer at popsup.com.au</li>
-            <li>2012--2013: software engineer / project management at Beijing When Technology.</li>
-            <li>2011--2012: software engineer at Beijing When Technology.</li>
-        </ul>
-        <h2>Publications</h2>
-        <ul>
-            <li>李奇,马忠梅,范非易,王晓.校园一卡通管理系统的构建及主要模块设计[J].单片机与嵌入式系统应用,2011, 11:59-62.</li>
-            <li>F. Fan, Y. Yan, F. Long, K. Zhao, H. Zhang. Estimating SpO2 via Time-efficient High Resolution Harmonic Analysis and Maximum Likelihood Tracking. IEEE Journal of Biomedical and Health Informatics. SCI. IF = 3.451.</li>
-            <li>F. Fan, Y. Yan, Y. Tang, H. Zhang. A Motion-tolerant Approach for  Monitoring SpO2 and HR using Photoplethysmography Signal with Dual Frame Length Processing and Multi-classifier Fusion. Computers in Biology and Medicine. SCI. IF = 1.836.</li>
-            <li>T. Feng, F. Fan, T. Bednarz. A Data-Driven Optimisation Approach to Urban Multi-Site Selection for Public Services and Retails. VRCAI'19</li>
-            <li>D. Loghin, S. Cai, G. Chen, T. T. A. Dinh, F. Fan, Q. Lin, J. Ng, B. C. Ooi, X. Sun, Q.-T. Ta, W. Wang, X. Xiao, Y. Yang, M. Zhang, Z. Zhang. The Disruptions of 5G on Data-driven Technologies and Applications. IEEE Transactions on Knowledge and Data Engineering</li>
-            <li>Tian FENG, Fei-yi FAN, Tomasz BEDNARZ. A review of computer graphics approaches to urban modeling from a machine learning perspective. Frontiers of Information Technology & Electronic Engineering</li>
-        </ul>
-    </body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feiyi Fan | 范非易 - Personal Homepage</title>
+    <style>
+        /* 全局重置与字体设置 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: #f5f7fa; /* 浅灰背景 */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* 主容器：类似A4纸的卡片效果 */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 60px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        /* 头部样式 */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        /* 章节标题 */
+        h2 {
+            font-size: 1.5rem;
+            color: #0366d6; /* 经典的科技蓝 */
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 列表样式优化 */
+        ul {
+            list-style-type: none; /* 去掉默认圆点 */
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Info 部分特殊处理 */
+        .info-list li {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        /* 经历部分样式 */
+        .experience-list > li {
+            margin-bottom: 30px; /* 每个主要经历之间拉大间距 */
+        }
+
+        /* 突出显示时间段 (假设格式为 20xx--20xx) */
+        .experience-list > li strong, 
+        .experience-list > li:first-line {
+            font-weight: 600;
+            color: #24292e;
+            display: block; /* 让第一行（通常是时间和职位）独占一行 */
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        /* 二级列表 (项目详情) */
+        .experience-list ul {
+            list-style-type: disc; /* 恢复二级列表的圆点 */
+            padding-left: 20px;
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .experience-list ul li {
+            margin-bottom: 4px;
+        }
+
+        /* 论文出版物样式 - 由JS动态生成，这里只保留基础样式 */
+        .publication-list {
+            list-style-type: decimal; /* 使用数字列表 */
+            padding-left: 20px;
+        }
+        
+        .publication-list li {
+            margin-bottom: 15px;
+            color: #444;
+            text-align: justify; /* 两端对齐 */
+        }
+        
+        /* 论文标题加粗 */
+        .pub-title {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* 链接样式（如果有） */
+        a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式调整：手机端减少内边距 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+                margin: 10px auto;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Feiyi Fan | 范非易</h1>
+            <p style="color: #666; margin-top: 10px;">Senior Engineer @ Institute of Computing Technology, CAS</p>
+        </header>
+
+        <section>
+            <h2>Info</h2>
+            <ul class="info-list">
+                <li><strong>Affiliation:</strong> Institute of Computing Technology, Chinese Academy of Sciences</li>
+                <li><strong>Title:</strong> Senior Engineer</li>
+                <li><strong>Email:</strong> <a href="mailto:fanfeiyi@ict.ac.cn">fanfeiyi@ict.ac.cn</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Education & Work Experience</h2>
+            <ul class="experience-list">
+                <li>
+                    <strong>2018--2020: Research Fellow at National University of Singapore</strong>
+                    <ul>
+                        <li>Project management: PANDA -- AI as a service</li>
+                        <li>Principal developer: GEMINI -- machine learning pipeline management with version control</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>2012--2018: Ph.D. - University of Chinese Academy of Sciences</strong>
+                    <div style="font-size: 0.9em; color: #666; margin-bottom: 5px; margin-top: -5px;">Institute of Microelectronics, Chinese Academy of Sciences</div>
+                    <ul>
+                        <li>Research areas: Wearable devices, Biomedical signal processing, Embedded software / algorithm design</li>
+                        <li>Key contributions: Motion-artifact resistant oximetry, Motion-artifact resistant wearable devices</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>2015--2016: M.S. - University of California, Los Angeles</strong>
+                    <ul>
+                        <li>Text-independent speaker recognition in low-SNR environment</li>
+                        <li>2016 presidential election prediction</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>2008--2013: B.E. - Beijing Institute of Technology</strong>
+                    <ul>
+                        <li>RFID campus card management system</li>
+                        <li>Zigbee-based parking lot sensor network</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Awards</h2>
+            <ul>
+                <li>National Informatics Olympiad in Province -- <strong>First Prize</strong></li>
+                <li>Institute of Microelectronics, CAS -- <strong>Wang Shouwu Scholarship</strong></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Part-time Experience</h2>
+            <ul class="experience-list">
+                <li>
+                    <strong>2013--2015: Software Engineer</strong>
+                    <span style="color: #666">at popsup.com.au</span>
+                </li>
+                <li>
+                    <strong>2012--2013: Software Engineer / Project Management</strong>
+                    <span style="color: #666">at Beijing When Technology</span>
+                </li>
+                <li>
+                    <strong>2011--2012: Software Engineer</strong>
+                    <span style="color: #666">at Beijing When Technology</span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Publications</h2>
+            <div id="publications-container">
+                <!-- JS 会在这里插入内容 -->
+                <p style="color: #999; font-style: italic;">Loading publications...</p>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                <a href="https://scholar.google.com/citations?user=jZqqsB0AAAAJ&hl=zh-CN" target="_blank">
+                    View full list on Google Scholar &rarr;
+                </a>
+            </p>
+        </section>
+        
+        <footer style="text-align: center; margin-top: 50px; font-size: 0.8rem; color: #999;">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Feiyi Fan</p>
+        </footer>
+    </div>
+
+    <script>
+        // ==========================================
+        // 论文数据源 (在此处更新论文，自动渲染到页面)
+        // ==========================================
+        const publicationsData = [
+            {
+                year: "2025",
+                title: "PhysCL: Knowledge-Aware Contrastive Learning of Physiological Signal Models for Cuff-Less Blood Pressure Estimation",
+                authors: "R Liu, J Shen, Y Gu, Y Chen, J Zhang, Q Wu, C Xu, F Fan",
+                journal: "IEEE Journal of Biomedical and Health Informatics",
+                note: "SCI"
+            },
+            {
+                year: "2025",
+                title: "DDIR: Domain-Disentangled Invariant Representation learning for tailored predictions",
+                authors: "Y Ma, Y Gu, X Qin, S Guo, F Fan, F Dong, Y Chen",
+                journal: "Knowledge-Based Systems",
+                note: ""
+            },
+            {
+                year: "2023",
+                title: "FewShotBP: Towards Personalized Ubiquitous Continuous Blood Pressure Measurement",
+                authors: "F Fan, Y Gu, J Shen, F Dong, Y Chen",
+                journal: "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT)",
+                note: ""
+            },
+             {
+                year: "2023",
+                title: "Auto-Augmentation Contrastive Learning for Wearable-based Human Activity Recognition",
+                authors: "Q Wu, J Shen, F Fan, Y Gu, C Xu, Y Chen",
+                journal: "IEEE International Conference on Bioinformatics and Biomedicine (BIBM)",
+                note: ""
+            },
+            {
+                year: "2021",
+                title: "A review of computer graphics approaches to urban modeling from a machine learning perspective",
+                authors: "Tian FENG, Fei-yi FAN, Tomasz BEDNARZ",
+                journal: "Frontiers of Information Technology & Electronic Engineering",
+                note: "Review"
+            },
+            {
+                year: "2019",
+                title: "A Data-Driven Optimisation Approach to Urban Multi-Site Selection for Public Services and Retails",
+                authors: "T. Feng, F. Fan, T. Bednarz",
+                journal: "VRCAI'19",
+                note: ""
+            },
+            {
+                year: "2018",
+                title: "The Disruptions of 5G on Data-driven Technologies and Applications",
+                authors: "D. Loghin, S. Cai, G. Chen, T. T. A. Dinh, F. Fan, et al.",
+                journal: "IEEE Transactions on Knowledge and Data Engineering",
+                note: ""
+            },
+            {
+                year: "2017",
+                title: "Estimating SpO2 via Time-efficient High Resolution Harmonic Analysis and Maximum Likelihood Tracking",
+                authors: "F. Fan, Y. Yan, F. Long, K. Zhao, H. Zhang",
+                journal: "IEEE Journal of Biomedical and Health Informatics",
+                note: "SCI, IF = 3.451"
+            },
+            {
+                year: "2017",
+                title: "A Motion-tolerant Approach for Monitoring SpO2 and HR using Photoplethysmography Signal with Dual Frame Length Processing and Multi-classifier Fusion",
+                authors: "F. Fan, Y. Yan, Y. Tang, H. Zhang",
+                journal: "Computers in Biology and Medicine",
+                note: "SCI, IF = 1.836"
+            }
+        ];
+
+        // ==========================================
+        // 渲染逻辑 (无需修改)
+        // ==========================================
+        function renderPublications() {
+            const container = document.getElementById('publications-container');
+            if (!container) return;
+
+            // 创建有序列表
+            const list = document.createElement('ul');
+            list.className = 'publication-list';
+
+            publicationsData.forEach(pub => {
+                const item = document.createElement('li');
+                
+                // 格式化作者名字，加粗 Feiyi Fan 或 F Fan
+                let formattedAuthors = pub.authors.replace(/(Feiyi Fan|F Fan|F\. Fan|范非易|Fei-yi FAN)/gi, '<strong>$1</strong>');
+
+                item.innerHTML = `
+                    <div class="pub-title">${pub.title}</div>
+                    <div style="font-size: 0.95em; color: #555;">${formattedAuthors}</div>
+                    <div style="font-size: 0.9em; color: #777; font-style: italic;">
+                        ${pub.journal} (${pub.year}) 
+                        ${pub.note ? `<span style="font-style: normal; color: #999;">- ${pub.note}</span>` : ''}
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+
+            // 清空容器并添加列表
+            container.innerHTML = '';
+            container.appendChild(list);
+        }
+
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', renderPublications);
+    </script>
+
+</body>
 </html>
